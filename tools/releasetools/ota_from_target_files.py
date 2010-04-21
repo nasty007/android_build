@@ -200,7 +200,7 @@ def SignOutput(temp_zip_name, output_zip_name):
 
 def AppendAssertions(script, info_dict, oem_dicts=None):
   oem_props = info_dict.get("oem_fingerprint_properties")
-  if not oem_props:
+  if oem_props is None or len(oem_props) == 0:
     if OPTIONS.override_device == "auto":
       device = GetBuildProp("ro.product.device", info_dict)
     else:
@@ -1382,7 +1382,7 @@ def main(argv):
                                  "payload_signer=",
                                  "payload_signer_args=",
                                  "extracted_input_target_files=",
-                                 "override_device=",
+                                 "override_device="
                              ], extra_option_handler=option_handler)
 
   if len(args) != 2:
