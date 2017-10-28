@@ -2459,7 +2459,7 @@ DU_TARGET_PACKAGE := $(PRODUCT_OUT)/$(DU_VERSION).zip
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(DU_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(DU_TARGET_PACKAGE) > $(DU_TARGET_PACKAGE).md5sum
+	$(hide) $(MD5SUM) $(DU_TARGET_PACKAGE) > $(DU_TARGET_PACKAGE).md5
 	@echo -e "Package complete: $(DU_TARGET_PACKAGE)"
 
 endif    # build_ota_package
