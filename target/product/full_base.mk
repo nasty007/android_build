@@ -23,6 +23,10 @@ PRODUCT_PACKAGES := \
     libfwdlockengine \
     WAPPushManager
 
+PRODUCT_PACKAGES += \
+    LiveWallpapers \
+    LiveWallpapersPicker
+
 # Additional settings used in all AOSP builds
 ifeq ($(wildcard vendor/du/google/GoogleAudio.mk),)
 PRODUCT_PROPERTY_OVERRIDES := \
